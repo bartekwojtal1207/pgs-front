@@ -1,6 +1,9 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import axios from 'axios';
 import Auxs from '../../hoc/Auxs';
+import SkiCamsSections from '../../components/SkiCamsSections/SkiCamsSections';
+import SkiCamSection from '../../components/SkiCamsSections/SkiCamsSection/SkiCamSection'
+
 
 
 class SkiCams extends Component {
@@ -9,7 +12,7 @@ class SkiCams extends Component {
         super(props);
 
         this.state = {
-            skiObject : {}
+            skiObject : []
         }
 
     }
@@ -20,34 +23,44 @@ class SkiCams extends Component {
         axios.get(url,{
             headers: { "X-Mashape-key" : 'kxSXmUymofmshFHhhKxWOSJpqJsJp1I3zNnjsnqKwhITAiC1zw' },
         }).then(response => {
-
-            const andalo = 'Andalo',
-                  monteBondone = 'Monte Bondone',
-                  data = Object.values(response.data);
+            const data = Object.values(response.data),
+                andalo = 'Andalo',
+                monteBondone = 'Monte Bondone';
 
             data.map(dataElement => {
-                if (dataElement.name === andalo || dataElement.name === monteBondone ) {
+                if (dataElement.name === andalo || dataElement.name === monteBondone) {
+
                     const updatedSkiObject = {
                         ...dataElement
-                    };
-
-                    this.setState({skiObject: updatedSkiObject})
+                    }, skiObjectArray = this.state.skiObject;
+                    console.log('tes3')
+                    skiObjectArray.push(updatedSkiObject);
+                    this.setState({skiObject: skiObjectArray })
                 }
-
             })
-
         }).catch(error => {
                 console.log(error)
         })
-
-
+        console.log('tes')
     }
 
     render() {
-        console.log(this.state.skiObject)
+
+        console.log('te2s')
+        // let skiCamsElement = this.state.skiObject;
+        // let li = null
+            // skiCamsElement.map(element => {
+            //     console.log(element)
+            //      li = <SkiCamSection key={element.name}>{element.name}</SkiCamSection>
+            //
+            //
+            // });
+
         return(
-            <Auxs>
-                <p>sdasd</p>
+            <Auxs>dsadasd
+                <SkiCamsSections>
+                    {/*{ li }*/}
+                </SkiCamsSections>
             </Auxs>
             )
     }
