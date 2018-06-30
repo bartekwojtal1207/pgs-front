@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-import { Grid, Navbar, Jumbotron, Button } from 'react-bootstrap';
-import './App.css';
+import logo from './assets/logo.svg';
+import Layouts from './components/Layouts/Layouts';
+import AboutUs from './containers/AbouUs/AbouUs';
+
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-
-      </div>
+        <Layouts>
+            <AboutUs/>
+        </Layouts>
     );
   }
 }
