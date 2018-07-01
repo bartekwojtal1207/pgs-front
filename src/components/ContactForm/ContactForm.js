@@ -70,6 +70,8 @@ class ContactForm extends Component {
     };
 
     formSubmit = (event) => {
+
+        event.preventDefault()
         const formElementsArray = [];
         const contactForm = {
             ...this.state.contactForm
@@ -82,22 +84,25 @@ class ContactForm extends Component {
             });
         }
         formElementsArray.map(formElement => {
+            formElement.config.accept = true;
+
             let isRequired = formElement.config.required,
                 emptyValue = formElement.config.value.toString().trim().length < 1,
                 mailType = formElement.config.type === 'email',
                 mailFormat = formElement.config.value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
 
-            if (isRequired && emptyValue) {
-                console.log(formElement)
-            }
             if (mailType && !mailFormat) {
-                console.log(formElement)
+                formElement.config.accept = false;
+                formElement.config.errorMessage = 'podaj prawidłowy format adresu email.';
             }
-            
+            if (isRequired && emptyValue) {
+                formElement.config.accept = false;
+                formElement.config.errorMessage = 'to pole jest wymagane.';
+            }
+
         });
 
-        event.preventDefault()
-
+        this.setState({contactForm: contactForm});
     };
 
 
@@ -124,7 +129,10 @@ class ContactForm extends Component {
                        type={formElement.config.type}
                        required={formElement.config.required}
                        changed={(event) => this.inputChangedHandler(event, formElement.id)}
-                />))}
+                       errorMessage={formElement.config.errorMessage}
+                       accept={formElement.config.accept}
+                />
+            ))}
 
             <div className={'form-control contact-inputs-wrap btn-wrap'}>
                 <button type="submit" className="btn btn-primary" onClick={(event) => this.formSubmit(event)}>Send</button>
@@ -141,8 +149,6 @@ class ContactForm extends Component {
         )
     }
 }
-ContactForm.propTypes = {
-    value: PropTypes.bool.isRequired
-}
+
 
 export default ContactForm;

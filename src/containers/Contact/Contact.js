@@ -13,19 +13,24 @@ class Contact extends Component {
                     required: true,
                     value: '',
                     placeholder: 'Name',
-                    type: 'text'
+                    type: 'text',
+                    errorMessage: '',
+                    accept: true
                 },
                 email: {
                     required: true,
                     value: '',
                     placeholder: 'Email',
                     type: 'email',
+                    errorMessage: '',
+                    accept: true
                 },
                 message: {
                     required: false,
                     value: '',
                     placeholder: 'Message',
-                    type: 'text'
+                    type: 'text',
+                    accept: true
                 }
             }
         }

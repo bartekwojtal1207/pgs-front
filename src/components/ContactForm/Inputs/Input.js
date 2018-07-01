@@ -3,7 +3,7 @@ import './Inputs.css';
 import validator from 'react-validation';
 
 const input = (props) => {
-    // console.log(props.required)
+    console.log(props.required)
     return (
         <div className={'form-control contact-inputs-wrap'}>
             <input type={props.type}
@@ -12,6 +12,7 @@ const input = (props) => {
                    className={'contact-inputs'}
                    placeholder={props.placeholder}
                    required={props.required}/>
+            {!props.accept ? <span className={'text-danger'}>{props.errorMessage}</span> : ''}
         </div>
 
     )

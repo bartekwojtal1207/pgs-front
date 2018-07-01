@@ -24,18 +24,18 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="689" />
+          <entry key="css" value="713" />
           <entry key="html" value="1" />
-          <entry key="js" value="10159" />
-          <entry key="txt" value="96" />
+          <entry key="js" value="10628" />
+          <entry key="txt" value="106" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="689" />
+          <entry key="CSS" value="713" />
           <entry key="HTML" value="1" />
-          <entry key="JavaScript" value="10159" />
-          <entry key="PLAIN_TEXT" value="96" />
+          <entry key="JavaScript" value="10628" />
+          <entry key="PLAIN_TEXT" value="106" />
         </counts>
       </usages-collector>
     </session>
