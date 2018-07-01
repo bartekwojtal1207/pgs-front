@@ -24,20 +24,8 @@ class ContactForm extends Component {
             ...contactFormToUpdate[inputId]
         };
 
-        // console.log(contactFormToUpdate)
-        // console.log(FormElementToUpdate)
-
         FormElementToUpdate.value = event.target.value;
-
-        // FormElementToUpdate.valid = this.checkValidity(FormElementToUpdate ,FormElementToUpdate.value, FormElementToUpdate.validation);
-        // FormElementToUpdate.touched = true;
         contactFormToUpdate[inputId] = FormElementToUpdate;
-
-        let formIsValid = true;
-
-        for (let inputId in contactFormToUpdate) {
-            formIsValid = contactFormToUpdate[inputId].valid && formIsValid;
-        }
 
         this.setState({contactForm: contactFormToUpdate});
     };
@@ -70,8 +58,7 @@ class ContactForm extends Component {
     };
 
     formSubmit = (event) => {
-
-        event.preventDefault()
+        event.preventDefault();
         const formElementsArray = [];
         const contactForm = {
             ...this.state.contactForm
@@ -99,12 +86,10 @@ class ContactForm extends Component {
                 formElement.config.accept = false;
                 formElement.config.errorMessage = 'to pole jest wymagane.';
             }
-
         });
 
         this.setState({contactForm: contactForm});
     };
-
 
     render() {
         const formElementsArray = [],
