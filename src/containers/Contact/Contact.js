@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import ContactForm from '../../components/ContactForm/ContactForm';
-import PropTypes from 'prop-types';
+
 
 class Contact extends Component {
 
@@ -19,7 +19,7 @@ class Contact extends Component {
                     required: true,
                     value: '',
                     placeholder: 'Email',
-                    type: 'email'
+                    type: 'email',
                 },
                 message: {
                     required: false,
