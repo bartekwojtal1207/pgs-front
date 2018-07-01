@@ -28,23 +28,25 @@ class ContactForm extends Component {
             });
         }
 
-        let input = null;
-
         const form = <form action="">
-            {console.log(formElementsArray)}
-            {formElementsArray.map(formElement => {
-
+            {formElementsArray.map(formElement => (
                 <Input key={formElement.id}
                        name={formElement.id}
                        value={formElement.config.value}
                        placeholder={formElement.config.placeholder}
-                       type={formElement.config.type}/>})
-            }
+                       type={formElement.config.type}/>))}
+
+                       <div className={'form-control contact-inputs-wrap btn-wrap'}>
+                           <button type="submit" className="btn btn-primary">Send</button>
+                       </div>
         </form>;
 
         return (
-            <div className={'form-container'}>
-                {form}
+            <div className={'form-container align-items-center row'}>
+                <div className={'offset-md-4 col-md-4'}>
+                    { form }
+                </div>
+
             </div>
         )
     }
