@@ -9,7 +9,7 @@ const skiCamSections = (props) => {
 
     return (
         <div className={'col-md-12 SkiCamContainer'}>
-
+            {props.children}
         </div>
     )
 };
