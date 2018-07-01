@@ -25,10 +25,9 @@ class SkiCams extends Component {
 
             const data = Object.values(response.data);
             let newArray = [];
-        console.log(data)
+
             newArray = data.filter(function (el) {
                 return el.name === 'Andalo' || el.name === 'Monte Bondone' ;
-                //@TODO hak do przerobienia
             });
 
             this.setState({skiObject: newArray })
@@ -37,6 +36,7 @@ class SkiCams extends Component {
                 console.log(error)
         });
     }
+
 
     render() {
         const skiCamsElement = this.state.skiObject;
@@ -69,7 +69,7 @@ class SkiCams extends Component {
 
         return(
             <Auxs>
-                <SkiCamsSections>
+                <SkiCamsSections skiCurortList={this.state.skiObject}>
                     {skiCurort}
                 </SkiCamsSections>
             </Auxs>

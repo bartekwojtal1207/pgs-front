@@ -3,6 +3,7 @@ import logo from './assets/logo.svg';
 import Layouts from './components/Layouts/Layouts';
 import AboutUs from './containers/AbouUs/AbouUs';
 import SkiCams from './containers/SkiCams/SkiCams';
+import Contact from './containers/Contact/Contact';
 
 
 class App extends Component {
@@ -10,7 +11,8 @@ class App extends Component {
     return (
         <Layouts>
             {/*<AboutUs/>*/}
-            <SkiCams/>
+            {/*<SkiCams/>*/}
+            <Contact/>
         </Layouts>
     );
   }

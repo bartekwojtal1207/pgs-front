@@ -1,16 +1,41 @@
 import React, {Component} from 'react';
-import Auxs from '../../hoc/Auxs';
 import ContactForm from '../../components/ContactForm/ContactForm';
+import PropTypes from 'prop-types';
 
 class Contact extends Component {
 
-    render() {
+    constructor(props) {
+        super(props);
 
-        return(
-            console.log('e')
-        )
+        this.state = {
+            formElement: {
+                name: {
+                    required: true,
+                    value: '',
+                    placeholder: 'Name',
+                    type: 'text'
+                },
+                email: {
+                    required: true,
+                    value: '',
+                    placeholder: 'Email',
+                    type: 'email'
+                },
+                message: {
+                    required: false,
+                    value: '',
+                    placeholder: 'Message',
+                    type: 'text'
+                }
+            }
+        }
     }
 
+    render() {
+        return(
+           <ContactForm formElement={this.state.formElement}/>
+        )
+    }
 }
 
 
