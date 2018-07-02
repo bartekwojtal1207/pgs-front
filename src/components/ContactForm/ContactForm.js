@@ -104,7 +104,7 @@ class ContactForm extends Component {
             });
         }
 
-        const form = <form>
+        const form = <form className={'form-contact'}>
             {formElementsArray.map(formElement => (
                 <Input key={formElement.id}
                        name={formElement.id}
@@ -126,7 +126,7 @@ class ContactForm extends Component {
 
         return (
             <div className={'form-container align-items-center row'}>
-                <div className={'offset-md-4 col-md-4 col-xs-12'}>
+                <div className={'offset-xs-2 col-xs-8 offset-sm-3 col-sm-6 offset-md-3 col-md-6 offset-xl-4 col-xl-4'}>
                     { form }
                 </div>
 

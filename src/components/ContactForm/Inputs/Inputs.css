@@ -1,18 +1,17 @@
+
+.form-contact {
+    -webkit-box-shadow: 0px 2px 9px 2px rgba(0,0,0,0.10);
+    box-shadow: 0px 2px 2px 2px rgba(0,0,0,0.10);
+}
+
 .contact-inputs-wrap {
-    border-top: none;
-    border-bottom: none;
-    border-radius: 0;
     padding: 0 6em 0 6em;
     min-height: 110px;
+    border: none;
 }
 
 .contact-inputs-wrap:first-of-type {
     padding-top: 50px;
-    border-top: 1px solid rgb(206, 212, 218);
-}
-
-.contact-inputs-wrap:last-of-type {
-    border-bottom: 1px solid rgb(206, 212, 218);
 }
 
 .contact-inputs-wrap:nth-of-type(0n+3) {
@@ -59,4 +58,14 @@
     display: inline;
     margin: 0;
     float: right;
+}
+
+@media screen and (max-width: 1100px ) {
+    .contact-inputs-wrap{
+        padding: 0 3em 0 3em;
+    }
+
+    .required-sybmol {
+        left: 120px;
+    }
 }
