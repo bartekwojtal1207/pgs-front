@@ -10,9 +10,9 @@ class App extends Component {
   render() {
     return (
         <Layouts>
-            {/*<AboutUs/>*/}
+            <AboutUs/>
             {/*<SkiCams/>*/}
-            <Contact/>
+            {/*<Contact/>*/}
         </Layouts>
     );
   }
