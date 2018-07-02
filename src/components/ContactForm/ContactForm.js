@@ -11,7 +11,7 @@ class ContactForm extends Component {
                 ...props.formElement,
             }
         }
-    }
+    };
 
     inputChangedHandler = (event, inputId) => {
         const contactFormToUpdate  = {
@@ -26,15 +26,15 @@ class ContactForm extends Component {
         this.setState({contactForm: contactFormToUpdate});
     };
 
-    checkValidity(element) {
+    sendForm(form) {
         let formIsValid = true;
 
-        element.map(elementValid => {
+        form.map(elementValid => {
             formIsValid = elementValid.config.accept && formIsValid;
         });
 
         if(formIsValid) { alert('wysłano formularz !') }
-    }
+    };
 
     formSubmit = (event) => {
         event.preventDefault();
@@ -69,11 +69,9 @@ class ContactForm extends Component {
             }
         });
 
-        this.checkValidity(formElementsArray);
+        this.sendForm(formElementsArray);
         this.setState({contactForm: contactForm});
     };
-
-
 
     render() {
         const formElementsArray = [],
@@ -117,7 +115,7 @@ class ContactForm extends Component {
 
             </div>
         )
-    }
+    };
 }
 
 

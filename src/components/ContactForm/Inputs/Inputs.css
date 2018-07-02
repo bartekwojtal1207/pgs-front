@@ -1,13 +1,14 @@
 
 .form-contact {
-    -webkit-box-shadow: 0px 2px 9px 2px rgba(0,0,0,0.10);
-    box-shadow: 0px 2px 2px 2px rgba(0,0,0,0.10);
+    -webkit-box-shadow: 0 2px 9px 2px rgba(0,0,0,0.10);
+    box-shadow: 0 2px 2px 2px rgba(0,0,0,0.10);
 }
 
 .contact-inputs-wrap {
     padding: 0 6em 0 6em;
-    min-height: 110px;
+    min-height: 100px;
     border: none;
+    font-size: 14px;
 }
 
 .contact-inputs-wrap:first-of-type {
@@ -19,13 +20,13 @@
 }
 
 .contact-inputs {
+    display: block;
     border-top: none;
     border-left: none;
     border-right: none;
     width: 100%;
     outline: none;
     padding-left: 5px;
-    display: block;
 }
 
 .btn-wrap {
@@ -34,15 +35,15 @@
 
 .btn {
     width: 85px;
-    border-radius: 0;
+    border-radius: 2px;
     float: right;
 }
 
 .required-sybmol {
     position: absolute;
-    left: 172px;
+    left: 150px;
     z-index: 99;
-    top: 108px;
+    top: 102px;
 }
 
 .contact-inputs-wrap:first-of-type .required-sybmol {
@@ -66,6 +67,6 @@
     }
 
     .required-sybmol {
-        left: 120px;
+        left: 110px;
     }
 }

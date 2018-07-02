@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import ContactForm from '../../components/ContactForm/ContactForm';
 
-
 class Contact extends Component {
 
     constructor(props) {
@@ -34,13 +33,13 @@ class Contact extends Component {
                 }
             }
         }
-    }
+    };
 
     render() {
-        return(
-           <ContactForm formElement={this.state.formElement}/>
+        return (
+            <ContactForm formElement={this.state.formElement}/>
         )
-    }
+    };
 }
 
 
