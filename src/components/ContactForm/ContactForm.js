@@ -71,7 +71,7 @@ class ContactForm extends Component {
             });
         }
         formElementsArray.map(formElement => {
-            formElement.config.accept = true;
+            formElement.accept = true;
 
             let isRequired = formElement.config.required,
                 emptyValue = formElement.config.value.toString().trim().length < 1,
@@ -120,13 +120,13 @@ class ContactForm extends Component {
             ))}
 
             <div className={'form-control contact-inputs-wrap btn-wrap'}>
-                <button type="submit" className="btn btn-primary" onClick={(event) => this.formSubmit(event)}>Send</button>
+                <button type="submit" className="btn btn-primary" onClick={(event) => this.formSubmit(event)}>SEND</button>
             </div>
         </form>;
 
         return (
             <div className={'form-container align-items-center row'}>
-                <div className={'offset-md-4 col-md-4'}>
+                <div className={'offset-md-4 col-md-4 col-xs-12'}>
                     { form }
                 </div>
 

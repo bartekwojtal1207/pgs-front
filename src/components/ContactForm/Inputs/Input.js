@@ -8,14 +8,13 @@ const input = (props) => {
     return (
         <Aux>
             <div className={'form-control contact-inputs-wrap'}>
-
                 <input type={props.type}
                        onChange={props.changed}
                        name={props.name}
                        className={'contact-inputs'}
                        placeholder={props.placeholder}
                        required={props.required}/>
-                {props.required ? <span className={'text-danger required-sybmol'}>*</span> : '' }
+                {(props.required) && (props.value.trim('') === '') ? <span className={'text-danger required-sybmol'}>*</span> : '' }
                 {!props.accept ?  <p className={'text-danger'} >{props.errorMessage}</p> :  ''}
             </div>
         </Aux>
