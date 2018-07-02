@@ -1,9 +1,9 @@
 .ArticlesContainer {
-    padding-top: 30px;
     display: flex;
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
     align-content: flex-start;
     align-items: flex-start;
+    padding-top: 150px;
 }
