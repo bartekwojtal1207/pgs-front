@@ -2,9 +2,7 @@ import React, {Component} from 'react';
 import './Inputs.css';
 import Aux from '../../../hoc/Auxs';
 
-
 const input = (props) => {
-
     let requriderSymbol, errorMessage = null;
 
     if((props.required) && (props.value.trim('') === '')){

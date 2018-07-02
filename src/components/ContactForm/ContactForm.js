@@ -1,8 +1,5 @@
 import React, {Component} from 'react';
 import Input from './Inputs/Input';
-import PropTypes from 'prop-types';
-import validator from 'react-validation';
-
 import './ContactForm.css';
 
 class ContactForm extends Component {
@@ -11,13 +8,12 @@ class ContactForm extends Component {
         super(props);
         this.state = {
             contactForm: {
-                ...props.formElement
+                ...props.formElement,
             }
         }
     }
 
     inputChangedHandler = (event, inputId) => {
-
         const contactFormToUpdate  = {
             ...this.state.contactForm
         }, FormElementToUpdate = {
@@ -30,35 +26,19 @@ class ContactForm extends Component {
         this.setState({contactForm: contactFormToUpdate});
     };
 
-    checkValidity = (element, value, rules) => {
-        let isValid = true;
-        value = element.target.value
-        // console.log(value)
+    checkValidity(element) {
+        let formIsValid = true;
 
-        const email = (value) => {
-            if (!validator.isEmail(value)) {
+        element.map(elementValid => {
+            formIsValid = elementValid.config.accept && formIsValid;
+        });
 
-                return `${value} is not a valid email.`
-            }
-        };
-
-        if (!rules) {
-            return true;
-        }
-
-        if (rules.required) {
-            isValid = value.trim() !== '' && isValid;
-        }
-
-        if ((element.elementType === 'checkbox') && (!element.checked)) {
-            isValid = false;
-        }
-        // console.log(element, rules)
-        return isValid;
-    };
+        if(formIsValid) { alert('wysłano formularz !') }
+    }
 
     formSubmit = (event) => {
         event.preventDefault();
+
         const formElementsArray = [];
         const contactForm = {
             ...this.state.contactForm
@@ -70,13 +50,14 @@ class ContactForm extends Component {
                 config: this.state.contactForm[key]
             });
         }
-        formElementsArray.map(formElement => {
-            formElement.accept = true;
 
+        formElementsArray.map(formElement => {
             let isRequired = formElement.config.required,
                 emptyValue = formElement.config.value.toString().trim().length < 1,
                 mailType = formElement.config.type === 'email',
                 mailFormat = formElement.config.value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
+
+            formElement.config.accept = true;
 
             if (mailType && !mailFormat) {
                 formElement.config.accept = false;
@@ -88,8 +69,11 @@ class ContactForm extends Component {
             }
         });
 
+        this.checkValidity(formElementsArray);
         this.setState({contactForm: contactForm});
     };
+
+
 
     render() {
         const formElementsArray = [],
@@ -105,6 +89,7 @@ class ContactForm extends Component {
         }
 
         const form = <form className={'form-contact'}>
+
             {formElementsArray.map(formElement => (
                 <Input key={formElement.id}
                        name={formElement.id}
