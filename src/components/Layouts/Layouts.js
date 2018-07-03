@@ -6,10 +6,12 @@ import  './Layouts.css';
 
 
 const layout = (props) => {
+    let heightContent = props.heightDocs + 'px';
+
     return (
         <Aux>
             <Toolbar/>
-            <main className={'Content'}>
+            <main className={'Content'} style={{height: heightContent}}>
                 {props.children}
             </main>
         </Aux>

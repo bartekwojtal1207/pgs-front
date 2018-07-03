@@ -7,10 +7,27 @@ import Contact from './containers/Contact/Contact';
 
 
 class App extends Component {
-  render() {
+    constructor(props) {
+        super(props);
+        this.state = {
+            height: window.innerHeight
+        }
+    }
+
+    updateHeightScreen() {
+        let updateHeight = window.innerHeight;
+        this.setState({height: updateHeight});
+    }
+
+    componentDidMount() {
+        this.updateHeightScreen();
+        window.addEventListener("resize", this.updateHeightScreen.bind(this));
+    }
+
+    render() {
     return (
         <BrowserRouter>
-            <Layouts>
+            <Layouts heightDocs={this.state.height - 114}>
                 <Route path='/' exact component={ AboutUs }/>
                 <Route path='/skicams' exact component={SkiCams}/>
                 <Route path='/contact' exact component={Contact}/>

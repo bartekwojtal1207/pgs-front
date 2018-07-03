@@ -7,7 +7,7 @@
           <entry key="css" value="23" />
           <entry key="html" value="1" />
           <entry key="jpg" value="2" />
-          <entry key="js" value="44" />
+          <entry key="js" value="47" />
           <entry key="json" value="1" />
           <entry key="rnc" value="1" />
           <entry key="svg" value="3" />
@@ -19,24 +19,24 @@
           <entry key="HTML" value="1" />
           <entry key="Image" value="2" />
           <entry key="JSON" value="1" />
-          <entry key="JavaScript" value="44" />
+          <entry key="JavaScript" value="47" />
           <entry key="RNG Compact" value="1" />
           <entry key="SVG" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="2030" />
+          <entry key="css" value="2062" />
           <entry key="html" value="1" />
-          <entry key="js" value="13385" />
+          <entry key="js" value="13721" />
           <entry key="txt" value="187" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="2030" />
+          <entry key="CSS" value="2062" />
           <entry key="HTML" value="1" />
-          <entry key="JavaScript" value="13385" />
+          <entry key="JavaScript" value="13721" />
           <entry key="PLAIN_TEXT" value="187" />
         </counts>
       </usages-collector>
