@@ -28,12 +28,10 @@ class App extends Component {
     return (
         <BrowserRouter>
             <Layouts heightDocs={this.state.height - 114}>
-                <Route path='/' exact component={ AboutUs }/>
-                <Route path='/skicams' exact component={SkiCams}/>
-                <Route path='/contact' exact component={Contact}/>
-                    {/*<AboutUs/>1*/}
-
-
+                <Route path='/' exact component={AboutUs}/>
+                <Route path='/skicams' component={SkiCams}/>
+                <Route path='/contact'component={Contact}/>
+                {/*<AboutUs/>1*/}
                 {/*<SkiCams/>*/}
                 {/*<Contact/>*/}
             </Layouts>

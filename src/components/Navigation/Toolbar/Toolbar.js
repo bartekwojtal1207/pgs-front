@@ -5,14 +5,12 @@ import NavigationItems from '../NavigationItems/NavigationItems';
 
 const toolbar = () => {
 
-
     return (
         <header className={'toolbar'}>
             <div className={'container'}>
                 <Logo />
                 <nav>
                     <NavigationItems />
-
                 </nav>
             </div>
         </header>

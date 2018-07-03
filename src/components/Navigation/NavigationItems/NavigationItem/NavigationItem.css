@@ -16,7 +16,6 @@
 }
 
 .navigation-item a:hover,
-.navigation-item a:active,
 .navigation-item a.active {
     border-bottom: 2px solid orangered;
     color: orangered;
