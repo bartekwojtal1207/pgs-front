@@ -1,9 +1,14 @@
 .navigation-items {
-    margin: 0;
+    margin: 0 0 0 20px;
     padding: 0;
     list-style: none;
     display: flex;
     align-items: flex-start;
     height: 100%;
-    font-size: 14px;
+    font-size: 12px;
+}
+@media screen and (max-width: 380px) {
+    .navigation-items {
+        font-size: 10px;
+    }
 }

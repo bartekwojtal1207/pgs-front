@@ -6,14 +6,12 @@ import  './Layouts.css';
 import Footer from '../Footer/Footer';
 
 const layout = (props) => {
-    let heightContent = props.heightDocs;
-
     return (
         <Aux>
             <Toolbar/>
-            <main className={'Content'} style={{height: heightContent}}>
-                {props.children}
-            </main>
+                <main className={'Content'}>
+                    {props.children}
+                </main>
             <Footer/>
         </Aux>
     )

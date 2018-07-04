@@ -1,9 +1,11 @@
 .SkiCamContainer {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     flex-direction: row;
     flex-wrap: wrap;
     align-content: flex-start;
     align-items: flex-start;
-    padding-top: 36px;
+    margin-top: 20px;
+    padding-left: 30px;
 }
+

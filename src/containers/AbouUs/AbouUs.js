@@ -5,7 +5,7 @@ import AboutUsArticles from '../../components/AboutUsArticles/AboutAsArticles';
 class AbouUs extends Component {
 
     render() {
-        return(
+        return (
             <Aux>
                 <AboutUsArticles/>
             </Aux>

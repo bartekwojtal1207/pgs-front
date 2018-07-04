@@ -14,17 +14,6 @@ class App extends Component {
         }
     }
 
-    updateHeightScreen() {
-        let updateHeight = window.innerHeight;
-        this.setState({height: updateHeight});
-    }
-
-    componentDidMount() {
-        console.log(this.state.height)
-        this.updateHeightScreen();
-        window.addEventListener("resize", this.updateHeightScreen.bind(this));
-    }
-
     render() {
 
     return (
@@ -33,7 +22,6 @@ class App extends Component {
                 <Route path='/' exact component={AboutUs}/>
                 <Route path='/skicams' component={SkiCams}/>
                 <Route path='/contact'component={Contact}/>
-                {/*<AboutUs/>1*/}
                 {/*<SkiCams/>*/}
                 {/*<Contact/>*/}
             </Layouts>

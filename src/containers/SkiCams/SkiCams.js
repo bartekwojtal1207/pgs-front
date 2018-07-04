@@ -11,7 +11,7 @@ class SkiCams extends Component {
         super(props);
 
         this.state = {
-            skiObject : []
+            skiPlace : []
         }
 
     }
@@ -24,36 +24,40 @@ class SkiCams extends Component {
         }).then(response => {
 
             const data = Object.values(response.data);
+           //@TODO dopisac komentarz dlaczeo inne miasta
             let newArray = [];
 
             newArray = data.filter(function (el) {
-                return el.name === 'Andalo' || el.name === 'Monte Bondone' ;
+                return el.name === 'Abetone' || el.name === 'Alpe di Siusi' ;
             });
 
-            this.setState({skiObject: newArray })
+            this.setState({skiPlace: newArray })
 
         }).catch(error => {
                 console.log(error)
         });
     }
 
-
-    render() {
-        const skiCamsElement = this.state.skiObject;
-
-        let skiCurort = null,
-            time = new Date(),
+    getCurrentDay = () => {
+        let time = new Date(),
             day = time.getDate(),
-            month = time.getMonth()+1,
+            month = time.getMonth() + 1,
             years = time.getFullYear();
 
-            day < 10 ? day = '0'+ day : day;
-            month < 10 ? month = '0'+ month : month;
+        day < 10 ? day = '0' + day : day;
+        month < 10 ? month = '0' + month : month;
 
-            let fullData = day+'-'+month+'-'+years;
+        let currentTime = null;
+        currentTime = day + '-' + month + '-' + years;
+        return currentTime;
+    };
 
+    render() {
+        const skiCamsElement = this.state.skiPlace;
 
-        skiCurort = skiCamsElement.map(element => {
+        let fullData = this.getCurrentDay();
+
+        let skiCurort = skiCamsElement.map(element => {
             let camera = Object.values(element.cams);
             const cameraArray = [];
 
@@ -62,8 +66,8 @@ class SkiCams extends Component {
             });
 
             return (
-                    <SkiCamSection video={cameraArray[0]} video1={cameraArray[1]}
-                                   key={element.name} clock={fullData}>{element.name}</SkiCamSection>
+                <SkiCamSection video={cameraArray[0]} videoTwo={cameraArray[1]}
+                               key={element.name} clock={fullData}>{element.name}</SkiCamSection>
             )
         });
 

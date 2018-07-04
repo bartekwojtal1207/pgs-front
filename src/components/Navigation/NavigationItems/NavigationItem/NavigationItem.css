@@ -8,10 +8,10 @@
 .navigation-item a {
     color: #090909;
     text-decoration: none;
-    padding: 8px 0;
+    padding: 0 0 4.5px 0;
     margin-right: 38px;
     height: 100%;
-    border-bottom: 2px solid transparent;
+    border-bottom: 1px solid transparent;
     box-sizing: border-box;
     display: block;
 }
@@ -22,3 +22,10 @@
     color: orangered;
 }
 .navigation-item a:hover{ cursor: pointer; }
+
+@media screen and (max-width: 380px) {
+    .navigation-item a {
+        margin-right: 20px;
+    }
+
+}

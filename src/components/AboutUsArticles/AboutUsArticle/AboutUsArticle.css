@@ -1,4 +1,4 @@
-.article {
+.Article {
     background-color: #FFF;
     width: 260px;
     margin: 10px 25px 25px 0;
@@ -7,22 +7,22 @@
     box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.10);
 }
 
-.article:last-of-type {
+.Article:last-of-type {
     margin-right: 0;
 }
 
-.article-title {
+.Article-title {
     font-size: 16px;
     padding: 20px 10px 0 10px;
 }
 
-.article-desc {
+.Article-desc {
     font-size: 12px;
     padding: 0 10px 10px 10px
 }
 
-@media screen and (max-width: 520px) {
-    .article:last-of-type {
-        margin-right: 25px;
+@media screen and (max-width: 769px) {
+    .Article {
+        margin-right: 5px
     }
 }

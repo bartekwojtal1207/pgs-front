@@ -8,14 +8,11 @@
     justify-content: flex-start;
     align-items: flex-start;
     padding: 0;
-    height: 17vh;
+    height: 113px;
     z-index: 90;
 }
 
-.toolbar nav {
-    height: 100%;
-}
-html,
-body {
-    height: 100% !important;
-}
+/*html,*/
+/*body {*/
+    /*height: 100% !important;*/
+/*}*/
