@@ -11,10 +11,10 @@ class ContactForm extends Component {
                 ...props.formElement,
             }
         }
-    };
+    }
 
     inputChangedHandler = (event, inputId) => {
-        const contactFormToUpdate  = {
+        const contactFormToUpdate = {
             ...this.state.contactForm
         }, FormElementToUpdate = {
             ...contactFormToUpdate[inputId]
@@ -26,23 +26,25 @@ class ContactForm extends Component {
         this.setState({contactForm: contactFormToUpdate});
     };
 
-    sendForm(form) {
+    checkValidate(form) {
         let formIsValid = true;
 
         form.map(elementValid => {
             formIsValid = elementValid.config.accept && formIsValid;
         });
 
-        if(formIsValid) { alert('wysłano formularz !') }
+        if (formIsValid) {
+            alert('wysłano formularz !')
+        }
     };
 
-    formSubmit = (event) => {
+    formSubmitHandler = (event) => {
         event.preventDefault();
 
-        const formElementsArray = [];
-        const contactForm = {
-            ...this.state.contactForm
-        };
+        const formElementsArray = [],
+            contactForm = {
+                ...this.state.contactForm
+            };
 
         for (let key in contactForm) {
             formElementsArray.push({
@@ -69,7 +71,7 @@ class ContactForm extends Component {
             }
         });
 
-        this.sendForm(formElementsArray);
+        this.checkValidate(formElementsArray);
         this.setState({contactForm: contactForm});
     };
 
@@ -87,7 +89,6 @@ class ContactForm extends Component {
         }
 
         const form = <form className={'form-contact'}>
-
             {formElementsArray.map(formElement => (
                 <Input key={formElement.id}
                        name={formElement.id}
@@ -103,7 +104,9 @@ class ContactForm extends Component {
             ))}
 
             <div className={'form-control contact-inputs-wrap btn-wrap'}>
-                <button type="submit" className="btn btn-primary" onClick={(event) => this.formSubmit(event)}>SEND</button>
+                <button type="submit" className="btn btn-primary"
+                        onClick={(event) => this.formSubmitHandler(event)}>SEND
+                </button>
             </div>
         </form>;
 
@@ -112,10 +115,9 @@ class ContactForm extends Component {
                 <div className={'offset-xs-2 col-xs-8 offset-sm-3 col-sm-6 offset-md-3 col-md-6 offset-xl-4 col-xl-4'}>
                     { form }
                 </div>
-
             </div>
         )
-    };
+    }
 }
 
 

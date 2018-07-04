@@ -1,6 +1,7 @@
-.Content {
+.content {
     background-color: #F9F9F9;
-    padding-top: 18vh;
+    padding-top: 17vh; /*header height*/
+    padding-bottom: 15vh; /*footer height */
     height: 100vh;
 }
 .row {
@@ -8,12 +9,12 @@
     margin-left: 0 !important;
 }
 @media screen and (max-width: 1199px) {
-    .Content {
+    .content {
         height: 100%;
     }
 }
 @media screen and (max-width: 340px) {
-    .Content {
+    .content {
         padding-top: 20vh;
     }
 }

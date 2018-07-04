@@ -9,7 +9,7 @@ const aboutUsArticles = () => {
     return (
         <div className={'container'}>
             <div className={'row'}>
-                <div className={'ArticlesContainer  offset-md-1 col-md-10'}>
+                <div className={'articles-container  offset-md-1 col-md-10'}>
                     <AboutUsArticle image={ImageOne}/>
                     <AboutUsArticle image={ImageTwo}/>
                     <AboutUsArticle image={ImageThree}/>

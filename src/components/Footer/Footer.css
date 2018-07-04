@@ -1,7 +1,30 @@
 .footbar {
-    position: absolute;
-    bottom: 0;
+    background-color: #090909;
+    height: 100px;
+    position: fixed;
     left: 0;
+    bottom: 0;
     width: 100%;
-    z-index: 99;
+    color: white;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-content span {
+    border-top: .5px solid #d3d3d373;
+    padding-top: 15px;
+    width: 205px;
+    display: block;
+    color: #d3d3d373;
+    font-size: 14px;
+}
+
+.footbar .container,
+.footbar .row,
+.footer-content {
+    height: 100%;
 }
