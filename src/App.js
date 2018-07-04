@@ -20,14 +20,16 @@ class App extends Component {
     }
 
     componentDidMount() {
+        console.log(this.state.height)
         this.updateHeightScreen();
         window.addEventListener("resize", this.updateHeightScreen.bind(this));
     }
 
     render() {
+
     return (
         <BrowserRouter>
-            <Layouts heightDocs={this.state.height - 114}>
+            <Layouts >
                 <Route path='/' exact component={AboutUs}/>
                 <Route path='/skicams' component={SkiCams}/>
                 <Route path='/contact'component={Contact}/>

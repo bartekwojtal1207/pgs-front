@@ -8,11 +8,14 @@
     justify-content: flex-start;
     align-items: flex-start;
     padding: 0;
-    height: 114px;
+    height: 17vh;
     z-index: 90;
 }
 
 .toolbar nav {
     height: 100%;
-    margin-left: 10px;
+}
+html,
+body {
+    height: 100% !important;
 }

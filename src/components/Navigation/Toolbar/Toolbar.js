@@ -8,10 +8,13 @@ const toolbar = () => {
     return (
         <header className={'toolbar'}>
             <div className={'container'}>
-                <Logo />
-                <nav>
-                    <NavigationItems />
-                </nav>
+                <div className={'offset-md-1 col-md-10'}>
+                    <Logo />
+                    <nav>
+                        <NavigationItems />
+                    </nav>
+                </div>
+
             </div>
         </header>
     )

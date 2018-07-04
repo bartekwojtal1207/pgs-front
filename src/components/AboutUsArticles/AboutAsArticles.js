@@ -1,18 +1,21 @@
 import React, { Component } from 'react';
 import AboutUsArticle from './AboutUsArticle/AboutUsArticle';
 import './AboutUsArticles.css';
-import ImageOne from '../../assets/img/about-us/img1.jpg';
-import ImageTwo from '../../assets/img/about-us/img2.jpg';
-import ImageThree from '../../assets/img/about-us/img3.jpg';
-
+// import ImageOne from 'https://picsum.photos/200/300/?random';
+// import ImageTwo from 'https://picsum.photos/200/300/?random';
+// import ImageThree from 'https://picsum.photos/200/300/?random';
+//
 const aboutUsArticles = () => {
 
     return (
-        <div className={'ArticlesContainer col-md-12'}>
-            <AboutUsArticle image={ImageOne}/>
-            <AboutUsArticle image={ImageTwo}/>
-            <AboutUsArticle image={ImageThree}/>
+        <div className={'container'}>
+            <div className={'ArticlesContainer  offset-md-1 col-md-10'}>
+                <AboutUsArticle image={'https://picsum.photos/260/150/?random'}/>
+                <AboutUsArticle image={'https://picsum.photos/260/150/?random'}/>
+                <AboutUsArticle image={'https://picsum.photos/260/150/?random'}/>
+            </div>
         </div>
+
     )
 };
 

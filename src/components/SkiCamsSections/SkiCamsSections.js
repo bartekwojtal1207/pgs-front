@@ -8,9 +8,12 @@ import './SkiCamSections.css';
 const skiCamSections = (props) => {
 
     return (
-        <div className={'col-md-12 SkiCamContainer'}>
-            {props.children}
+        <div className={'container'}>
+            <div className={'offset-md-1 col-md-10 SkiCamContainer'}>
+                {props.children}
+            </div>
         </div>
+
     )
 };
 
