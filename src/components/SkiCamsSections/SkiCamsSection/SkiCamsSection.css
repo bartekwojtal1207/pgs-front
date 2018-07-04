@@ -18,7 +18,7 @@
     padding: 15px 0 0 0;
 }
 
-.clock {
+.Clock {
     float: right;
     font-size: 11px;
     padding: 5px;
@@ -33,7 +33,7 @@
     height: 160px;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 991px) {
     .SkiCamsSection {
         margin: 20px 0;
         width: 100%;

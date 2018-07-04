@@ -11,30 +11,30 @@ class SkiCams extends Component {
         super(props);
 
         this.state = {
-            skiPlace : []
+            skiPlace: []
         }
-
     }
 
     componentDidMount() {
         const url = 'https://makevoid-skicams.p.mashape.com/cams.json';
 
-        axios.get(url,{
-            headers: { "X-Mashape-key" : 'kxSXmUymofmshFHhhKxWOSJpqJsJp1I3zNnjsnqKwhITAiC1zw' },
-        }).then(response => {
+        axios.get(url, {
+            headers: {"X-Mashape-key": 'kxSXmUymofmshFHhhKxWOSJpqJsJp1I3zNnjsnqKwhITAiC1zw'},
 
-            const data = Object.values(response.data);
-           //@TODO dopisac komentarz dlaczeo inne miasta
+        }).then(response => {
+            const data = Object.values(response.data),
+                cityOne = 'Abetone',
+                cityTwo = 'Alpe di Siusi';
             let newArray = [];
 
             newArray = data.filter(function (el) {
-                return el.name === 'Abetone' || el.name === 'Alpe di Siusi' ;
+                return el.name === cityOne || el.name === cityTwo;
             });
 
-            this.setState({skiPlace: newArray })
+            this.setState({skiPlace: newArray})
 
         }).catch(error => {
-                console.log(error)
+            console.log(error)
         });
     }
 
@@ -54,12 +54,11 @@ class SkiCams extends Component {
 
     render() {
         const skiCamsElement = this.state.skiPlace;
-
         let fullData = this.getCurrentDay();
 
         let skiCurort = skiCamsElement.map(element => {
-            let camera = Object.values(element.cams);
             const cameraArray = [];
+            let camera = Object.values(element.cams);
 
             camera.map(cams => {
                 cameraArray.push(cams.url)
@@ -71,13 +70,13 @@ class SkiCams extends Component {
             )
         });
 
-        return(
+        return (
             <Auxs>
                 <SkiCamsSections skiCurortList={this.state.skiObject}>
-                    {skiCurort}
+                    { skiCurort }
                 </SkiCamsSections>
             </Auxs>
-            )
+        )
     }
 }
 

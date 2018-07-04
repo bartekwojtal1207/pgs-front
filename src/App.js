@@ -7,6 +7,7 @@ import Contact from './containers/Contact/Contact';
 
 
 class App extends Component {
+
     constructor(props) {
         super(props);
         this.state = {
@@ -22,7 +23,6 @@ class App extends Component {
                 <Route path='/' exact component={AboutUs}/>
                 <Route path='/skicams' component={SkiCams}/>
                 <Route path='/contact'component={Contact}/>
-                {/*<SkiCams/>*/}
                 {/*<Contact/>*/}
             </Layouts>
         </BrowserRouter>
